@@ -12,7 +12,7 @@
           "Richiesta completata. Controlla i log proxy per conferma.";
       } catch (e) {
         document.getElementById("result").innerText =
-          "Errore previsto: " + e.message;
+          "Richiesta non bloccata da squid (Errore previsto su browser: " + e.message +" )";
       }
     }
   </script>
