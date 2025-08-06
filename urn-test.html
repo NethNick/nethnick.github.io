@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test URN ACL - CVE-2025-54574</title>
+  <script>
+    async function testURN() {
+      try {
+        const response = await fetch("urn:example:invalid", {
+          mode: "no-cors" // evita blocchi CORS a livello browser
+        });
+        document.getElementById("result").innerText =
+          "Richiesta completata. Controlla i log proxy per conferma.";
+      } catch (e) {
+        document.getElementById("result").innerText =
+          "Errore previsto: " + e.message;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Verifica URN ACL - CVE-2025-54574</h1>
+  <button onclick="testURN()">Esegui test URN</button>
+  <p id="result">Premi il pulsante per iniziare il test.</p>
+</body>
+</html>
