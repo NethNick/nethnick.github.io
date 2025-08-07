@@ -5,14 +5,15 @@
   <script>
     async function testURN() {
       try {
-        const response = await fetch("urn::@www.nethanal.it:80/urn?", {
-          mode: "no-cors" // evita blocchi CORS a livello browser
-        });
-        document.getElementById("result").innerText =
-          "Richiesta completata. Controlla i log proxy per conferma.";
-      } catch (e) {
-        document.getElementById("result").innerText =
-          "Richiesta non bloccata da squid (Errore previsto su browser: " + e.message +" )";
+        const testURL = "http://urn::@ww.nethanal.it:80/urn?";
+        const result = document.getElementById("result");
+
+        try {
+          const res = await fetch(testURL, { mode: "no-cors" });
+          result.innerText = "✅ Richiesta inviata, verifica i log del proxy.";
+        } catch (e) {
+          result.innerText = "⛔ Bloccata (previsto): " + e.message;
+        }
       }
     }
   </script>
