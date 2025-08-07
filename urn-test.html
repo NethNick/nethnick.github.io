@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Test URN ACL - CVE-2025-54574</title>
+  <title>Test Squid CVE-2025-54574</title>
   <script>
-    async function testURN() {
-      try {
-        const testURL = "http://urn::@ww.nethanal.it:80/urn?";
-        const result = document.getElementById("result");
+    async function testSquidBlock() {
+      const testURL = "http://urn::@ww.nethanal.it:80/urn?";
+      const result = document.getElementById("result");
 
-        try {
-          const res = await fetch(testURL, { mode: "no-cors" });
-          result.innerText = "✅ Richiesta inviata, verifica i log del proxy.";
-        } catch (e) {
-          result.innerText = "⛔ Bloccata (previsto): " + e.message;
-        }
+      try {
+        const res = await fetch(testURL, { mode: "no-cors" });
+        result.innerText = "✅ Richiesta inviata, verifica i log del proxy.";
+      } catch (e) {
+        result.innerText = "⛔ Bloccata (previsto): " + e.message;
       }
     }
   </script>
 </head>
 <body>
-  <h1>Verifica URN ACL - CVE-2025-54574</h1>
-  <button onclick="testURN()">Esegui test URN</button>
-  <p id="result">Premi il pulsante per iniziare il test.</p>
+  <h1>Verifica blocco Squid (CVE-2025-54574)</h1>
+  <p>Questa pagina tenterà una richiesta HTTP con un URN-like path. Se il tuo proxy Squid è configurato correttamente, la richiesta sarà bloccata.</p>
+  <button onclick="testSquidBlock()">Esegui test</button>
+  <p id="result">In attesa...</p>
 </body>
 </html>
