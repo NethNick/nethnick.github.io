@@ -5,7 +5,7 @@
   <script>
     async function testURN() {
       try {
-        const response = await fetch("echo -e "urn::@www.nethanal.it:80/urn?", {
+        const response = await fetch("urn::@www.nethanal.it:80/urn?", {
           mode: "no-cors" // evita blocchi CORS a livello browser
         });
         document.getElementById("result").innerText =
