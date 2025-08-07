@@ -21,5 +21,7 @@
   <p>Questa pagina tenterà una richiesta HTTP con un URN-like path. Se il tuo proxy Squid è configurato correttamente, la richiesta sarà bloccata.</p>
   <button onclick="testSquidBlock()">Esegui test</button>
   <p id="result">In attesa...</p>
+  <iframe src="http://urn:@host:80/urn?" onload="document.getElementById('result').innerText = 'Richiesta inviata, verifica i log del proxy';" onerror="document.getElementById('result').innerText = 'Bloccato o errore di rete';"></iframe>
+  <p id="result">Esecuzione in corso...</p>
 </body>
 </html>
