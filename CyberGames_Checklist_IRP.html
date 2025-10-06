@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist Incident Response Plan – NIS2 / ACN / D.Lgs.138/2024</title>
+<style>
+  body {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 1.5rem;
+    color: #222;
+    background: #fff;
+  }
+  h1, h2, h3 { color: #003366; margin-top: 2rem; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 12px;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background-color: #f0f4fa;
+    font-weight: 600;
+  }
+  tr:nth-child(even) { background-color: #fafafa; }
+  .scrollable { overflow-x: auto; }
+  .obbligo { color: #003366; font-weight: 600; }
+  .best { color: #555; font-style: italic; }
+  @media print {
+    body { font-size: 11px; margin: 0.5cm; }
+    table { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Checklist Incident Response Plan</h1>
+<p><strong>Conforme a:</strong> Direttiva (UE) 2022/2555 (NIS2), D.Lgs. 138/2024, Determinazione ACN n. 164179/2025</p>
+<p><strong>Fonti:</strong> NIS2 • D.Lgs.138/2024 • ACN 164179/2025 • FNCDP v2.1 • MMS AgID</p>
+
+<h2>1. Preparazione</h2>
+<div class="scrollable">
+<table>
+<thead>
+<tr><th>Attività</th><th>Ruolo</th><th>Tipo</th><th>Scadenza</th><th>Riferimento</th><th>Stato GAP</th></tr>
+</thead><tbody>
+<tr><td>Definire perimetro (servizi, sistemi e dati critici)</td><td>Direzione / CISO / Resp. IT</td><td class="obbligo">Obbligo</td><td>Annuale</td><td>D.Lgs.138/2024 art.19; Det. ACN All.1</td><td></td></tr>
+<tr><td>Nominare referente IR / PoC ACN</td><td>Direzione / CISO</td><td class="obbligo">Obbligo</td><td>Una tantum</td><td>D.Lgs.138/2024 art.7; Det. ACN All.1</td><td></td></tr>
+<tr><td>Identificare canali di comunicazione d’emergenza</td><td>CISO / Resp. IT / PoC</td><td class="obbligo">Obbligo</td><td>Annuale</td><td>Det. ACN All.1 – Governance</td><td></td></tr>
+<tr><td>Attivare logging centralizzato e conservazione log</td><td>Resp. IT / CISO</td><td class="obbligo">Obbligo</td><td>Continuo</td><td>Det. ACN All.1 – Logging; MMS AgID</td><td></td></tr>
+<tr><td>Simulare esercitazioni di risposta agli incidenti</td><td>Direzione / HR / CISO / IT</td><td class="obbligo">Obbligo (sett. 2025)</td><td>Semestrale</td><td>D.Lgs.138/2024 art.19; Det. ACN All.1</td><td></td></tr>
+<tr><td>Definire strumenti per raccolta e conservazione forense</td><td>CISO / Resp. IT</td><td class="best">Best practice</td><td>Annuale</td><td>FNCDP v2.1 – Respond; Det. ACN All.1</td><td></td></tr>
+</tbody></table>
+</div>
+
+<h2>2. Rilevazione e Analisi</h2>
+<div class="scrollable">
+<table>
+<thead>
+<tr><th>Attività</th><th>Ruolo</th><th>Tipo</th><th>Scadenza</th><th>Riferimento</th><th>Stato GAP</th></tr>
+</thead><tbody>
+<tr><td>Definire criteri evento / incidente</td><td>CISO / Resp. IT</td><td class="obbligo">Obbligo</td><td>Annuale</td><td>Det. ACN All.1 – Incident Handling</td><td></td></tr>
+<tr><td>Notifica iniziale ad ACN tramite PoC</td><td>PoC / CISO</td><td class="obbligo">Obbligo</td><td><strong>Entro 24 h</strong></td><td>NIS2 art.23(1); D.Lgs.138/2024 art.28</td><td></td></tr>
+<tr><td>Notifica tecnica dettagliata</td><td>PoC / CISO / Resp. IT</td><td class="obbligo">Obbligo</td><td><strong>Entro 72 h</strong></td><td>NIS2 art.23(2)</td><td></td></tr>
+<tr><td>Relazione finale ad ACN con misure correttive</td><td>PoC / CISO / Direzione</td><td class="obbligo">Obbligo</td><td><strong>Entro 1 mese</strong></td><td>NIS2 art.23(4)</td><td></td></tr>
+<tr><td>Mantenere registro incidenti e indicatori (IoC)</td><td>Resp. IT / CISO</td><td class="obbligo">Obbligo</td><td>Continuo</td><td>Det. ACN All.1 – Logging Incidenti</td><td></td></tr>
+</tbody></table>
+</div>
+
+<h2>3. Contenimento e Ripristino</h2>
+<div class="scrollable">
+<table>
+<thead><tr><th>Attività</th><th>Ruolo</th><th>Tipo</th><th>Scadenza</th><th>Riferimento</th><th>Stato GAP</th></tr></thead>
+<tbody>
+<tr><td>Bloccare diffusione incidente</td><td>Resp. IT / CISO</td><td class="obbligo">Obbligo</td><td>Immediata</td><td>Det. ACN All.1 – Containment</td><td></td></tr>
+<tr><td>Effettuare bonifica e rimozione cause</td><td>Resp. IT</td><td class="obbligo">Obbligo</td><td>Post-evento</td><td>Det. ACN All.1 – Eradication</td><td></td></tr>
+<tr><td>Ripristinare servizi da backup verificato</td><td>Resp. IT</td><td class="obbligo">Obbligo</td><td>Post-evento</td><td>NIS2 art.21(2)(e); Det. ACN All.1 – BC/DR</td><td></td></tr>
+<tr><td>Aggiornare configurazioni e password post-incidente</td><td>Resp. IT / CISO</td><td class="best">Best practice</td><td>Post-evento</td><td>FNCDP v2.1 – Respond</td><td></td></tr>
+</tbody></table>
+</div>
+
+<h2>4. Post-Incidente</h2>
+<div class="scrollable">
+<table>
+<thead><tr><th>Attività</th><th>Ruolo</th><th>Tipo</th><th>Scadenza</th><th>Riferimento</th><th>Stato GAP</th></tr></thead>
+<tbody>
+<tr><td>Conservare log e prove digitali (≥ 12 mesi)</td><td>Resp. IT / CISO / PoC</td><td class="obbligo">Obbligo</td><td>Post-evento</td><td>Det. ACN All.1 – Forensic Evidence</td><td></td></tr>
+<tr><td>Condurre Root Cause Analysis</td><td>CISO / Resp. IT / PoC</td><td class="obbligo">Obbligo</td><td>Post-evento</td><td>Det. ACN All.1 – Post-Incident</td><td></td></tr>
+<tr><td>Aggiornare piano IR e procedure (l. learned)</td><td>Direzione / CISO / IT</td><td class="obbligo">Obbligo</td><td>Annuale / Post-evento</td><td>D.Lgs.138/2024 art.19</td><td></td></tr>
+<tr><td>Coinvolgere direzione e DPO nelle decisioni</td><td>Direzione / CISO</td><td class="best">Best practice</td><td>Post-evento</td><td>FNCDP v2.1 – Governance</td><td></td></tr>
+</tbody></table>
+</div>
+
+<h2>5. Governance e Miglioramento Continuo</h2>
+<div class="scrollable">
+<table>
+<thead><tr><th>Attività</th><th>Ruolo</th><th>Tipo</th><th>Scadenza</th><th>Riferimento</th><th>Stato GAP</th></tr></thead>
+<tbody>
+<tr><td>Riesame annuale del piano IRP</td><td>Direzione / CISO / Resp. IT</td><td class="obbligo">Obbligo</td><td>Annuale</td><td>Det. ACN All.1 – Governance</td><td></td></tr>
+<tr><td>Integrazione IRP con BC/DR Plan</td><td>Direzione / CISO</td><td class="obbligo">Obbligo</td><td>Annuale</td><td>NIS2 art.21(2)(e)</td><td></td></tr>
+<tr><td>Formazione e sensibilizzazione del personale</td><td>Direzione / HR / CISO</td><td class="obbligo">Obbligo (sett. 2025)</td><td>Annuale</td><td>D.Lgs.138/2024 art.19; FNCDP v2.1</td><td></td></tr>
+<tr><td>Report semestrale alla Direzione su incidenti</td><td>CISO / PoC / Resp. IT</td><td class="best">Best practice</td><td>Semestrale</td><td>Det. ACN All.1 – Governance</td><td></td></tr>
+</tbody></table>
+</div>
+
+<h2>Ruoli e Responsabilità (PMI)</h2>
+<table>
+<tr><th>Ruolo</th><th>Competenze principali</th></tr>
+<tr><td><strong>Direzione</strong></td><td>Approva politiche, nomina PoC, supervisiona incidenti critici, riceve report.</td></tr>
+<tr><td><strong>CISO</strong></td><td>Coordina sicurezza, supervisiona log e IRP, cura risk e conformità NIS2.</td></tr>
+<tr><td><strong>Responsabile IT</strong></td><td>Gestisce infrastruttura, backup, logging, contenimento tecnico e ripristino.</td></tr>
+<tr><td><strong>Referente Sicurezza / PoC ACN</strong></td><td>Coordina notifiche e comunicazioni ufficiali con ACN.</td></tr>
+<tr><td><strong>HR / Amministrazione</strong></td><td>Cura formazione, consapevolezza e registrazioni interne.</td></tr>
+</table>
+
+<p><em>Tutte le evidenze (verbali, notifiche, log, RCA, piani aggiornati) devono essere archiviate in formato digitale, firmate o validate e disponibili in caso di audit ACN.</em></p>
+
+</body>
+</html>
